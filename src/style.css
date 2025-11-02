@@ -5,4 +5,12 @@
 @theme {
   --font-title: "Momo Trust Display";
   --font-primary: "Open Sans";
+
+  --color-darker: #252525;
+  --color-dark: #3b3b3b;
+  --color-light: #ffffff;
+  --color-red: #ff0000;
+  --color-green: #30be71;
+
+  --shadow-box: 2px 4px 16px -2px rgba(0, 0, 0, 0.4);
 }

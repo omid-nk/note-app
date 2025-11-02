@@ -1,0 +1,35 @@
+# ==========================
+# Node.js & Vite Project Git Ignore
+# ==========================
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+vite-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor folders & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# System cache
+*.cache
+*.temp
+
+# Optional: lock files (اگر فقط از npm استفاده می‌کنی، بقیه رو می‌تونی نگه نداری)
+# yarn.lock
+# pnpm-lock.yaml

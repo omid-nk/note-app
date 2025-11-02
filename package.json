@@ -6,12 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
-  "author": "Omid",
+  "author": "omidnk",
   "license": "MIT",
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.16",
+    "gh-pages": "^6.3.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.1",
     "tailwindcss": "^4.1.16",
     "vite": "^7.1.12"
   }
