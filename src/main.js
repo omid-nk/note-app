@@ -73,20 +73,28 @@ function createNewNote() {
   articleElem.appendChild(h3Elem);
   articleElem.appendChild(pElem);
   articleElem.appendChild(spanElem);
+
   const titleValue = titleInput.value.trim();
   const textValue = textarea.value.trim();
+
   h3Elem.innerHTML = titleValue;
   pElem.innerHTML = textValue;
+
   if (selectedColor) {
     articleElem.classList.add(selectedColor);
   } else {
     articleElem.classList.add("bg-dark");
   }
+
   if (h3Elem.innerHTML.length > 3) {
     screen.append(articleElem);
     newNotePage.classList.toggle("hidden");
     titleInput.value = "";
     textarea.value = "";
+
+    // 🔹 بعد از ساخت نوت، رنگ‌ها از حالت انتخاب خارج بشن
+    colorPicker.forEach((c) => c.classList.remove("selectedColor"));
+    selectedColor = null;
   } else {
     alert("Title cannot be empty");
   }

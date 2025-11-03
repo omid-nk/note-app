@@ -95,7 +95,7 @@
     <!-- empty screen -->
     <section
       id="emptyScreen"
-      class="text-light mt-40 flex flex-col items-center"
+      class="text-light mt-20 flex flex-col items-center"
     >
       <img class="w-80" src="public/img/empty.png" alt="empty screen" />
       <p class="mt-2 text-xl">Create your first note !</p>
@@ -114,7 +114,7 @@
     <!-- new note page -->
     <section
       id="newNotePage"
-      class="bg-darker fixed top-0 right-0 bottom-0 left-0 z-50 flex hidden min-h-dvh w-full flex-col justify-between p-6"
+      class="bg-darker fixed top-0 right-0 bottom-0 left-0 z-50 hidden min-h-dvh w-full flex-col p-6"
     >
       <header class="flex items-center justify-between">
         <div
@@ -130,26 +130,6 @@
           <svg class="text-light h-6 w-6"><use href="#save"></use></svg>
         </div>
       </header>
-
-      <div>
-        <input
-          id="titleInput"
-          autofocus
-          type="text"
-          maxlength="22"
-          placeholder="Title"
-          class="font-title text-light border-dark mt-2 w-full border-b p-2 text-3xl outline-0"
-        />
-
-        <textarea
-          name="textarea"
-          class="text-light mt-4 w-full resize-none rounded-2xl border-0 p-2 outline-0"
-          id="textareaInput"
-          rows="22"
-          maxlength="580"
-          placeholder="Type something..."
-        ></textarea>
-      </div>
 
       <div id="colorPicker" class="mt-8 flex items-center justify-end gap-3">
         <div
@@ -172,6 +152,26 @@
           data-color="bg-orange-600"
           class="colorPicker h-10 w-10 cursor-pointer rounded-lg bg-orange-600"
         ></div>
+      </div>
+
+      <div>
+        <input
+          id="titleInput"
+          autofocus
+          type="text"
+          maxlength="22"
+          placeholder="Title"
+          class="font-title text-light border-dark mt-2 w-full border-b p-2 text-3xl outline-0"
+        />
+
+        <textarea
+          name="textarea"
+          class="text-light mt-4 w-full resize-none rounded-2xl border-0 p-2 outline-0"
+          id="textareaInput"
+          rows="16"
+          maxlength="580"
+          placeholder="Type something..."
+        ></textarea>
       </div>
     </section>
     <!-- search page -->
