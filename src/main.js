@@ -40,13 +40,27 @@ const observer = new MutationObserver(toggleEmptyScreen);
 
 observer.observe(mainScreen, { childList: true });
 
+// color picker
+const colorPicker = document.querySelectorAll(".colorPicker");
+let selectedColor = null;
+
+colorPicker.forEach(function (item) {
+  item.addEventListener("click", function () {
+    colorPicker.forEach((c) => c.classList.remove("selectedColor"));
+    item.classList.add("selectedColor");
+    selectedColor = item.dataset.color;
+  });
+});
+
 // create new note
+
 const screen = document.querySelector("#mainScreen");
 const titleInput = document.querySelector("#titleInput");
 const textarea = document.querySelector("#textareaInput");
 const saveBtn = document.querySelector("#saveBtn");
 
 saveBtn.addEventListener("click", createNewNote);
+
 function createNewNote() {
   const articleElem = document.createElement("article");
   const h3Elem = document.createElement("h3");
@@ -63,6 +77,11 @@ function createNewNote() {
   const textValue = textarea.value.trim();
   h3Elem.innerHTML = titleValue;
   pElem.innerHTML = textValue;
+  if (selectedColor) {
+    articleElem.classList.add(selectedColor);
+  } else {
+    articleElem.classList.add("bg-dark");
+  }
   if (h3Elem.innerHTML.length > 3) {
     screen.append(articleElem);
     newNotePage.classList.toggle("hidden");

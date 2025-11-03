@@ -28,7 +28,6 @@ input:-webkit-autofill {
 .notes {
   width: 100%;
   color: #ffffff;
-  background: #3b3b3b;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 0.75rem;
   padding: 16px;
@@ -82,4 +81,10 @@ input:-webkit-autofill {
   height: 2px;
   background: #ffffff;
   transform: rotate(45deg);
+}
+
+.selectedColor {
+  position: relative;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 12px #000000ba;
 }
