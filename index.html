@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
     <title>Note App</title>
   </head>
@@ -41,11 +42,44 @@
           d="M12 4.5v15m7.5-7.5h-15"
         />
       </symbol>
+      <!-- #arrow-left -->
+      <symbol
+        id="arrow-left"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5 8.25 12l7.5-7.5"
+        />
+      </symbol>
+      <!-- #save -->
+      <symbol
+        id="save"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+        />
+      </symbol>
     </svg>
-    <!-- main content -->
+    <!-- header -->
     <header class="flex items-center justify-between">
-      <h1 class="text-light font-title text-4xl">Notes</h1>
+      <h1 class="text-light font-title cursor-default text-4xl">Notes</h1>
       <div
+        id="searchBtn"
         class="bg-dark flex h-12 w-12 cursor-pointer items-center justify-center rounded-xl transition"
       >
         <svg class="text-light h-6 w-6">
@@ -53,20 +87,82 @@
         </svg>
       </div>
     </header>
+    <!-- main -->
+    <main id="mainScreen" class="mt-6 mb-24 flex flex-col gap-4"></main>
     <!-- empty screen -->
-    <section class="text-light mt-40 flex flex-col items-center">
+    <section
+      id="emptyScreen"
+      class="text-light mt-40 flex flex-col items-center"
+    >
       <img class="w-80" src="/public/img/empty.png" alt="empty screen" />
       <p class="mt-2 text-xl">Create your first note !</p>
     </section>
-    <!-- create new note Btn -->
+    <!-- new note Btn -->
     <div
-      class="bg-dark text-light shadow-box fixed right-6 bottom-6 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full"
+      id="newNoteBtn"
+      class="bg-dark text-light shadow-box fixed right-8 bottom-8 z-40 flex h-16 w-16 cursor-pointer items-center justify-center rounded-full"
     >
       <svg class="text-light h-12 w-12">
         <use href="#plus"></use>
       </svg>
     </div>
-    <!-- create new note page -->
+    <!-- new note page -->
+    <section
+      id="newNotePage"
+      class="bg-darker fixed top-0 right-0 bottom-0 left-0 z-50 hidden min-h-dvh w-full flex-col p-6"
+    >
+      <header class="flex items-center justify-between">
+        <div
+          id="notePageArrowBtn"
+          class="bg-dark flex h-12 w-12 cursor-pointer items-center justify-center rounded-xl transition"
+        >
+          <svg class="text-light h-6 w-6"><use href="#arrow-left"></use></svg>
+        </div>
+        <div
+          id="saveBtn"
+          class="bg-dark flex h-12 w-12 cursor-pointer items-center justify-center rounded-xl transition"
+        >
+          <svg class="text-light h-6 w-6"><use href="#save"></use></svg>
+        </div>
+      </header>
+      <input
+        id="titleInput"
+        autofocus
+        type="text"
+        maxlength="22"
+        placeholder="Title"
+        class="font-title text-light border-dark mt-8 w-full border-b p-2 text-3xl outline-0"
+      />
+      <textarea
+        name="textarea"
+        class="text-light mt-4 w-full resize-none rounded-2xl border-0 p-2 outline-0"
+        id="textareaInput"
+        rows="20"
+        maxlength="580"
+        placeholder="Type something..."
+      ></textarea>
+    </section>
+    <!-- search page -->
+    <section
+      id="searchPage"
+      class="bg-darker fixed top-0 right-0 bottom-0 left-0 z-50 hidden min-h-dvh w-full flex-col p-6"
+    >
+      <header class="flex items-center justify-between gap-2">
+        <div
+          id="searchPageArrowBtn"
+          class="bg-dark flex h-10 w-10 cursor-pointer items-center justify-center rounded-xl transition"
+        >
+          <svg class="text-light h-6 w-6"><use href="#arrow-left"></use></svg>
+        </div>
+        <input
+          id="titleInput"
+          autofocus
+          type="text"
+          placeholder="Search by the keyword..."
+          class="font-title text-light border-dark text-md grow border-r-4 p-2 outline-0"
+        />
+      </header>
+    </section>
     <!-- js -->
     <script src="/src/main.js"></script>
   </body>

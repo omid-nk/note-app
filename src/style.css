@@ -14,3 +14,72 @@
 
   --shadow-box: 2px 4px 16px -2px rgba(0, 0, 0, 0.4);
 }
+
+::selection {
+  background: #30be71;
+  color: #252525;
+  text-shadow: none;
+}
+
+input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out;
+}
+
+.notes {
+  width: 100%;
+  color: #ffffff;
+  background: #3b3b3b;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.75rem;
+  padding: 16px;
+  box-shadow: 2px 4px 16px -10px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.notes__header {
+  font-family: "Momo Trust Display";
+  font-size: 20px;
+  cursor: default;
+  width: 90%;
+  margin: 5px 0 4px;
+}
+
+.notes__body {
+  font-family: "Open Sans";
+  cursor: default;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.notes-delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 32px;
+  height: 42px;
+  border-radius: 0 0.75rem 0 0.75rem;
+  background: #252525;
+  cursor: pointer;
+}
+
+.notes-delete-btn::before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 2px;
+  background: #ffffff;
+  transform: rotate(-45deg);
+}
+.notes-delete-btn::after {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 2px;
+  background: #ffffff;
+  transform: rotate(45deg);
+}
